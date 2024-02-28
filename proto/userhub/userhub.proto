@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "./userhub";
+import "base/base.proto";
+import "google/protobuf/wrappers.proto";
+
+enum CredentialType {
+  CredentialTypeDefault = 0; // DEFAULT VALUE, DO NOT USE
+  CredentialTypeEmailVerificationCode = 1; // 邮箱验证码登录
+}
+
+message LoginRequest {
+  CredentialType credential_type = 1; // 认证类型
+}
+
+message EmailVerificationCode {
+  string email = 1; // 邮箱
+  string verification_code = 2; // 验证码
+}
+
+message LoginResponse {
+  base.BaseResponse base_resp = 127;
+}

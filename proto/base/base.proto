@@ -1,0 +1,10 @@
+syntax = "proto3";
+option go_package = "github.com/changqing98/proto-hub/proto_gen/base";
+package base;
+
+message BaseResponse {
+  int32 code = 1; // response status code
+  string message = 2; // response message
+  string detail = 3; // response detail message
+  map<string, string> extra = 15; // extra data
+}
