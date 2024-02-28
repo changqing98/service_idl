@@ -4,4 +4,3 @@ go 1.18
 
 require google.golang.org/protobuf v1.32.0
 
-replace github.com/changqing98/service_idl => ../base
