@@ -1,8 +1,7 @@
 syntax = "proto3";
 
-option go_package = "./userhub";
+option go_package = "github.com/changqing98/proto-hub/proto_gen/userhub";
 import "base/base.proto";
-import "google/protobuf/wrappers.proto";
 
 enum CredentialType {
   CredentialTypeDefault = 0; // DEFAULT VALUE, DO NOT USE
@@ -11,6 +10,7 @@ enum CredentialType {
 
 message LoginRequest {
   CredentialType credential_type = 1; // 认证类型
+  EmailVerificationCode email_verification_code = 2; // 邮箱验证码登录
 }
 
 message EmailVerificationCode {
