@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "github.com/changqing98/proto-gen/proto_gen/base";
+option go_package = "github.com/changqing98/service_idl/proto-gen/base";
 package base;
 
 message BaseResponse {

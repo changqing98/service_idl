@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/changqing98/proto-hub/proto_gen/userhub";
+option go_package = "github.com/changqing98/service_idl/proto_gen/userhub";
 import "base/base.proto";
 
 enum CredentialType {
