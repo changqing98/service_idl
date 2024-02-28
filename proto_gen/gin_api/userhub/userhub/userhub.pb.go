@@ -7,7 +7,7 @@
 package userhub
 
 import (
-	base "github.com/changqing98/service_idl/proto-gen/base"
+	base "github.com/changqing98/service_idl/proto_gen/base"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
