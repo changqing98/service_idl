@@ -1,11 +1,18 @@
 syntax = "proto3";
 
-option go_package = "github.com/changqing98/service_idl/proto_gen/userhub";
-import "base/base.proto";
+option go_package = "github.com/changqing98/service_idl/userhub";
 
-enum CredentialType {
-  CredentialTypeDefault = 0; // DEFAULT VALUE, DO NOT USE
-  CredentialTypeEmailVerificationCode = 1; // 邮箱验证码登录
+
+import "google/api/annotations.proto";
+
+service UserHubService {
+  rpc Login(LoginRequest) returns (LoginResponse){
+    option (google.api.http) = {
+      post: "/api/userhub/users/_login"
+      body: "message"
+    };
+  }
+
 }
 
 message LoginRequest {
@@ -13,11 +20,21 @@ message LoginRequest {
   EmailVerificationCode email_verification_code = 2; // 邮箱验证码登录
 }
 
+
+enum CredentialType {
+  CredentialTypeDefault = 0; // DEFAULT VALUE, DO NOT USE
+  CredentialTypeEmailVerificationCode = 1; // 邮箱验证码登录
+}
+
+
 message EmailVerificationCode {
   string email = 1; // 邮箱
   string verification_code = 2; // 验证码
 }
 
 message LoginResponse {
-  base.BaseResponse base_resp = 127;
+  int32 code = 1; // 错误码
+  string message = 2; // 错误信息
 }
+
+
