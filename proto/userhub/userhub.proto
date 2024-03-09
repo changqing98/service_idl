@@ -2,17 +2,8 @@ syntax = "proto3";
 
 option go_package = "github.com/changqing98/service_idl/userhub";
 
-
-import "google/api/annotations.proto";
-
 service UserHubService {
-  rpc Login(LoginRequest) returns (LoginResponse){
-    option (google.api.http) = {
-      post: "/api/userhub/users/_login"
-      body: "message"
-    };
-  }
-
+  rpc Login(LoginRequest) returns (LoginResponse);
 }
 
 message LoginRequest {
