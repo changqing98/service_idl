@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 option go_package = "github.com/changqing98/service_idl/proto_gen/userhub";
+package userhub;
 
 service UserHubService {
   rpc Login(LoginRequest) returns (LoginResponse);
